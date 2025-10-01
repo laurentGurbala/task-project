@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="d-flex justify-content-center align-items-center vh-100">
+			<div class="w-50 border border-primary p-4 rounded">
+				<h1 class="text-center mb-3">Inscription</h1>
+
+				{{ form_errors(registrationForm) }}
+
+				{{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.lastname, {label: 'nom'}) }}
+                {{ form_row(registrationForm.firstname, {label: 'prénom'}) }}
+				{{ form_row(registrationForm.email, {label: 'email'}) }}
+				{{ form_row(registrationForm.plainPassword, {label: 'mot de passe'}) }}
+
+				<button type="submit" class="w-100 btn btn-primary mt-4">s'inscrire</button>
+				{{ form_end(registrationForm) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

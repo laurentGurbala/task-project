@@ -14,7 +14,7 @@
         {% endblock %}
     </head>
     <body>
-        {% if navbar_variant.value != 'none' %}
+        {% if navbar_variant is defined and navbar_variant.value != 'none' %}
             {% include 'components/_navbar.html.twig' with {navbar_variant: navbar_variant} %}
         {% endif %}
         {% block body %}{% endblock %}
