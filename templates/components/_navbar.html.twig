@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+	<div
+		class="container-fluid d-flex flex-column">
+		{# barre du haut #}
+		<div
+			class="d-flex w-100 align-items-center justify-content-between mb-2">
+			{# Logo #}
+			<a class="navbar-brand" href="#">Task-Project</a>
+
+			{# Barre de recherche #}
+			<form class="d-none d-lg-flex flex-grow-1 mx-3">
+				<input class="form-control" type="search" placeholder="Rechercher..." aria-label="Search">
+			</form>
+
+			{# Deconnexion #}
+			<button class="btn btn-outline-danger">Déconnexion</button>
+
+			{# Bouton hamburger (affiche barre du bas) #}
+			{% if navbar_variant.value == 'project' %}
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBottom" aria-controls="navbarBottom" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			{% endif %}
+		</div>
+
+		{% if navbar_variant.value == 'project' %}
+			{# barre du bas #}
+			<div class="collapse navbar-collapse w-100" id="navbarBottom">
+				<div class="d-flex w-100 align-items-center justify-content-between">
+					{# Titre projet #}
+					<p class="navbar-brand mb-0" href="#">Titre du projet</p>
+
+					{# Liste des participants #}
+					<!-- Liste des participants -->
+					<div class="d-flex align-items-center">
+						<ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-row flex-lg-row">
+							{# Exemple #}
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									user 1
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									user 2
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									user 3
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					{# Bouton ajouter #}
+					<button class="btn btn-primary">Ajouter</button>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</nav>
