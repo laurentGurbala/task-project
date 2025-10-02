@@ -13,7 +13,7 @@
 			</form>
 
 			{# Deconnexion #}
-			<button class="btn btn-outline-danger">Déconnexion</button>
+			<a href="{{ path('app_logout') }}" class="btn btn-outline-danger">Déconnexion</a>
 
 			{# Bouton hamburger (affiche barre du bas) #}
 			{% if navbar_variant.value == 'project' %}
