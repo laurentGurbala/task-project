@@ -22,25 +22,16 @@ class RegistrationFormType extends AbstractType
             ->add('lastname', TextType::class, [
                     "attr" => [
                         "placeholder" => "Votre nom",
-                        "class" => "form-control"
                     ]
                 ])    
             ->add('firstname', TextType::class, [
                 "attr" => [
                     "placeholder" => "Votre prénom",
-                    "class" => "form-control"
-                ],
-                "label_attr" => [
-                    "class" => "form-label mt-3"
                 ]
             ])
             ->add('email', EmailType::class, [
                 "attr" => [
-                    "placeholder" => "Votre email",
-                    "class" => "form-control"
-                ],
-                "label_attr" => [
-                    "class" => "form-label mt-3",
+                    "placeholder" => "Votre email"
                 ]
             ])
             ->add('plainPassword', RepeatedType::class, [
@@ -48,35 +39,25 @@ class RegistrationFormType extends AbstractType
                 "invalid_message" => "Le mot de passe et la confirmation doivent être identiques",
                 "first_options" => [
                     "attr" => [
-                        "placeholder" => "Votre mot de passe",
-                        "class" => "form-control"
+                        "placeholder" => "Votre mot de passe"
                     ],
                     "label" => "Mot de passe",
-                    "label_attr" => [
-                        "class" => "form-label mt-3"
-                    ],
                 ],
                 "second_options" => [
                     "attr" => [
-                        "placeholder" => "Confirmez votre mot de passe",
-                        "class" => "form-control"
+                        "placeholder" => "Confirmez votre mot de passe"
                     ],
-                    "label" => "Confirmez votre mot de passe",
-                    "label_attr" => [
-                        "class" => "form-label mt-3"
-                    ]
+                    "label" => "Confirmez votre mot de passe"
                 ],
                 'mapped' => false,
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'S\'il vous plaît, entrez un mot de passe',
-                    ]),
-                    new Length([
-                        'min' => 3,
-                        'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
+                    new NotBlank(message: 'Veuillez entrer un mot de passe'),
+                    new Length(
+                        min: 3,
+                        minMessage: 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                    ]),
+                        max: 4096,
+                    ),
                 ],
             ])
         ;
