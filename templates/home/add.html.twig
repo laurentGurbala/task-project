@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un projet
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<div class="d-flex justify-content-center">
+			<div class="w-50">
+				<h1 class="my-4">Créer un projet</h1>
+
+				{{ form_start(form) }}
+
+				{{ form_errors(form) }}
+
+				<div class="mb-3">
+					{{ form_label(form.title) }}
+					{{ form_widget(form.title) }}
+					{{ form_errors(form.title) }}
+				</div>
+
+				<div class="d-grid">
+					{{ form_widget(form.submit) }}
+				</div>
+
+				{{ form_end(form) }}
+				
+            </div>
+
+        </div>
+    </main>
+{% endblock %}

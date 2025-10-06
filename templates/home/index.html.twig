@@ -16,7 +16,7 @@
                     <div class="card text-white bg-primary">
                         <a href="#" class="btn btn-primary">
                             <div class="card-body d-flex justify-content-center align-items-center">
-                                <h3 class="fs-5 card-title">{{ project.name }}</h3>
+                                <h3 class="fs-5 card-title">{{ project.title }}</h3>
                             </div>
                         </a>
                     </div>
@@ -26,7 +26,7 @@
 			{# Add card #}
             <div class="col"> 
                 <div class="card border-primary">
-                    <a href="#" class="btn btn-outline-primary">
+                    <a href="{{ path('app_home_add') }}" class="btn btn-outline-primary">
                         <div class="card-body d-flex justify-content-center align-items-center">
                             <h3 class="fs-5 card-title">Ajouter un projet</h3>
                         </div>
