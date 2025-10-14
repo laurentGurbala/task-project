@@ -19,7 +19,7 @@ final class HomeController extends AbstractController
         private EntityManagerInterface $entityManager,
     ) {}
 
-    #[Route('/', name: 'app_home')]
+    #[Route('/', name: 'app_home', methods: ['GET'])]
     public function index(): Response
     {
         $projects = $this->projectRepository->findAll();
